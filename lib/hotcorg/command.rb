@@ -14,7 +14,7 @@ module Hotcorg
             timers = Timers::Group.new
             last_temp = 0
             timers.every(5) {
-                current_temp = Hotcorg::Cpu.get_cpu_temp
+                current_temp = Hotcorg::Cpu.temp
                 if ((current_temp - last_temp).abs >= threthold)
                     puts current_temp
                     last_temp = current_temp
