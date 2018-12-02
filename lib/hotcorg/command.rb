@@ -1,10 +1,11 @@
-require 'iStats'
-
+require 'timers'
 
 module Hotcorg
-    class Command extend CPU_STATS
-        def self.cpu_temp
-            get_cpu_temp
+    class Command
+        def self.execute
+            timers = Timers::Group.new
+            timers.every(2) { puts Hotcorg::Cpu.get_cpu_temp }
+            loop { timers.wait }
         end
     end
 end

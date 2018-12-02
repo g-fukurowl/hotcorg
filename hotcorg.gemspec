@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "iStats"
   spec.add_runtime_dependency "clockwork"
+  spec.add_dependency "timers"
 end

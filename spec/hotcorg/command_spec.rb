@@ -2,8 +2,10 @@ require "spec_helper"
 
 module Hotcorg
     describe Command do
-        it "can print cpu temperature" do
-            expect(Command.cpu_temp).not_to be nil
-          end
+        #it "can get cpu temp (> 0 degree)" do
+        #    expect(Command.cpu_temp).to be > 0
+        #end
+
+        Command.execute
     end
 end
