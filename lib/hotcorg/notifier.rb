@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'rbconfig'
 
 module Hotcorg
@@ -6,7 +7,7 @@ module Hotcorg
             host_os = RbConfig::CONFIG['host_os']
             case host_os
             when /darwin|mac os/
-                message = "\"CPU temp: #{cpu_temp}°C\""
+                message = "\" 🐶 CPU temp: #{cpu_temp}°C\"".encode("UTF-8")
                 command = "osascript -e 'display notification #{message}'"
                 system(command)
             else
