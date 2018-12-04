@@ -1,3 +1,5 @@
+require 'timers'
+
 module Hotcorg
     class Runner
         def start(threthold, interval, command, notify_flag)
