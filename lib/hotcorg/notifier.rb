@@ -1,13 +1,13 @@
 # coding: utf-8
+
 require 'rbconfig'
 
 module Hotcorg
     class Notifier
-        def self.notify_cpu_temperature(cpu_temp)
+        def self.notify_cpu_temperature(message)
             host_os = RbConfig::CONFIG['host_os']
             case host_os
             when /darwin|mac os/
-                message = "\" 🐶 CPU temp: #{cpu_temp}°C\"".encode("UTF-8")
                 command = "osascript -e 'display notification #{message}'"
                 system(command)
             else

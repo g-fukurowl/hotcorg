@@ -10,7 +10,8 @@ module Hotcorg
             @timers.every(interval) {
                 current_temp = Hotcorg::Cpu.temp
                 if ((current_temp - @last_temp).abs >= granularity)
-                    Hotcorg::Notifier.notify_cpu_temperature(current_temp) if notify_flag
+                    Hotcorg::Notifier.notify_cpu_temperature(
+                        "\" 🐶 CPU temp: #{current_temp}°C\"".encode("UTF-8")) if notify_flag
                     @last_temp = current_temp
                     system(command) if (command != nil)
                 end
