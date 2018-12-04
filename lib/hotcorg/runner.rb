@@ -30,7 +30,7 @@ module Hotcorg
 
         def react_for_cpu_temp_chang_over_granularity(current_temp)
             if ((current_temp - @last_temp).abs >= @granularity)
-                Hotcorg::Notifier.notify_cpu_temperature(
+                Hotcorg::Notifier.fire(
                     "\" 🐶 CPU temp: #{current_temp}°C\"".encode("UTF-8")) if @notify_flag
                 @last_temp = current_temp
                 system(@command) if (@command != nil)
@@ -51,7 +51,7 @@ module Hotcorg
                 if (e[:flag] == false) && (e[:val] <= current_temp)
                     e[:flag] = true
                     if (is_fired == false)
-                        Hotcorg::Notifier.notify_cpu_temperature(
+                        Hotcorg::Notifier.fire(
                             "\" 🐶🔥 CPU temp got #{e[:val]}°C\"".encode("UTF-8")) if @notify_flag
                         is_fired = true
                     end

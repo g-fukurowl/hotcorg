@@ -4,7 +4,7 @@ require 'rbconfig'
 
 module Hotcorg
     class Notifier
-        def self.notify_cpu_temperature(message)
+        def self.fire(message)
             host_os = RbConfig::CONFIG['host_os']
             case host_os
             when /darwin|mac os/
