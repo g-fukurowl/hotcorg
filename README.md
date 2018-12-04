@@ -4,11 +4,18 @@ https://github.com/g-fukurowl/hotcorg
 
 ## Installation
 
-Add this line to your application's Gemfile:
+```ruby
+gem 'hotcorg'
+```
 
-```
-$ gem install hotcorg
-```
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install hotcorg
+
 
 ## Usage
 
