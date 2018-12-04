@@ -1,28 +1,42 @@
 # Hotcorg
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hotcorg`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Hotcorg works as a watchdog to react cpu temperature change. This gem supports macOS only.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'hotcorg'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hotcorg
+$ gem install hotcorg
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Run the following command to start watching a cpu temperature change (Enter Ctrl-C to stop).
+
+```
+hotcorg go
+```
+
+### Options
+
+```
+  -g, [--granularity=N]            # Granularity for change in CPU temperature at which hotcorg should react [°C]
+                                   # Default: 1
+  -t, [--threthold=one two three]  
+                                   # Default: [50, 60, 70, 80, 90]
+  -i, [--interval=N]               # Interval when hotcorg checks CPU temperature change [Sec.]
+                                   # Default: 5
+  -c, [--command=COMMAND]          # Command to be executed each time hotcorg detects CPU temperature change
+  -n, [--notify], [--no-notify]    # Whether hotcorg notifies CPU temperature change (supported only with macOS)
+                                   # Default: true
+```
+
+#### Examples
+
+```
+hotcorg go -g 10 -t 70 80 90 -i 60 -c "echo 'hello'"
+```
+
 
 ## Development
 
