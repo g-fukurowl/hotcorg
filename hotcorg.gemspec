@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["="]
   spec.email         = ["gfukurowl@gmail.com"]
 
-  spec.summary       = %q{Hotcorg works as the watchdog for changing of cpu temperture.}
-  spec.description   = %q{Hotcorg watches cpu temperture. You can direct thretholds. If cpu temperture gets over them, Hotdog notifies to you.}
+  spec.summary       = %q{Hotcorg works as the watchdog for changing of cpu temperture. (for macOS only)}
+  spec.description   = %q{Hotcorg watches cpu temperture. You can direct thretholds. If cpu temperture gets over them, Hotdog notifies to you. (for macOS only)}
   spec.homepage      = "https://github.com/g-fukurowl/hotcorg"
   spec.license       = "MIT"
 
@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "iStats"
   spec.add_dependency "timers"
+  spec.add_dependency "thor"
 end

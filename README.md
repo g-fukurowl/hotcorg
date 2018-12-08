@@ -4,17 +4,9 @@ https://github.com/g-fukurowl/hotcorg
 
 ## Installation
 
-```ruby
-gem 'hotcorg'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hotcorg
+$ gem install hotcorg
+```
 
 
 ## Usage
@@ -42,7 +34,7 @@ hotcorg go
 #### Examples
 
 ```
-hotcorg go -g 10 -t 70 80 90 -i 60 -c "echo 'hello'"
+$ hotcorg go -g 10 -t 70 80 90 -i 60 -c "echo 'hello'"
 ```
 
 ## License
